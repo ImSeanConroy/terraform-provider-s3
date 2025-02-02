@@ -164,5 +164,7 @@ func (p *cs3Provider) DataSources(_ context.Context) []func() datasource.DataSou
 
 // Resources defines the resources implemented in the provider.
 func (p *cs3Provider) Resources(_ context.Context) []func() resource.Resource {
-	return []func() resource.Resource{}
+	return []func() resource.Resource{
+		NewOrderResource,
+	}
 }
