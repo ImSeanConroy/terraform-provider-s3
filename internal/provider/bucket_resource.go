@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 package provider
 
 import (
@@ -51,16 +54,20 @@ func (r *orderResource) Schema(_ context.Context, _ resource.SchemaRequest, resp
 	resp.Schema = schema.Schema{
 		Attributes: map[string]schema.Attribute{
 			"last_updated": schema.StringAttribute{
-				Computed: true,
+				Description: "Date Updated",
+				Computed:    true,
 			},
 			"date": schema.StringAttribute{
-				Computed: true,
+				Description: "Date Created",
+				Computed:    true,
 			},
 			"name": schema.StringAttribute{
-				Required: true,
+				Description: "S3 Bucket Name",
+				Required:    true,
 			},
 			"tags": schema.StringAttribute{
-				Required: true,
+				Description: "S3 Bucket Tags",
+				Required:    true,
 			},
 		},
 	}

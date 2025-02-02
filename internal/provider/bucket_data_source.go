@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 package provider
 
 import (
@@ -51,13 +54,16 @@ func (d *bucketDataSource) Schema(_ context.Context, _ datasource.SchemaRequest,
 				NestedObject: schema.NestedAttributeObject{
 					Attributes: map[string]schema.Attribute{
 						"date": schema.StringAttribute{
-							Computed: true,
+							Description: "Date Created",
+							Computed:    true,
 						},
 						"name": schema.StringAttribute{
-							Computed: true,
+							Description: "S3 Bucket Name",
+							Computed:    true,
 						},
 						"tags": schema.StringAttribute{
-							Required: true,
+							Description: "S3 Bucket Tags",
+							Required:    true,
 						},
 					},
 				},

@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 package provider
 
 import (
@@ -51,14 +54,17 @@ func (p *cs3Provider) Schema(_ context.Context, _ provider.SchemaRequest, resp *
 	resp.Schema = schema.Schema{
 		Attributes: map[string]schema.Attribute{
 			"region": schema.StringAttribute{
-				Optional: true,
+				Description: "Region for AWS. May also be provided via CUSTOMS3_REGION environment variable.",
+				Optional:    true,
 			},
 			"access_key": schema.StringAttribute{
-				Optional: true,
+				Description: "Access Key for AWS. May also be provided via CUSTOMS3_ACCESS_KEY environment variable.",
+				Optional:    true,
 			},
 			"secret_key": schema.StringAttribute{
-				Optional:  true,
-				Sensitive: true,
+				Description: "Secret Key for AWS. May also be provided via CUSTOMS3_SECRET_KEY environment variable.",
+				Optional:    true,
+				Sensitive:   true,
 			},
 		},
 	}
