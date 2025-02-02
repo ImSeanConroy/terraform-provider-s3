@@ -45,7 +45,7 @@ type cs3ProviderModel struct {
 
 // Metadata returns the provider type name.
 func (p *cs3Provider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
-	resp.TypeName = "customs3"
+	resp.TypeName = "s3"
 	resp.Version = p.version
 }
 
@@ -54,15 +54,15 @@ func (p *cs3Provider) Schema(_ context.Context, _ provider.SchemaRequest, resp *
 	resp.Schema = schema.Schema{
 		Attributes: map[string]schema.Attribute{
 			"region": schema.StringAttribute{
-				Description: "Region for AWS. May also be provided via CUSTOMS3_REGION environment variable.",
+				Description: "Region for AWS. May also be provided via S3_REGION environment variable.",
 				Optional:    true,
 			},
 			"access_key": schema.StringAttribute{
-				Description: "Access Key for AWS. May also be provided via CUSTOMS3_ACCESS_KEY environment variable.",
+				Description: "Access Key for AWS. May also be provided via S3_ACCESS_KEY environment variable.",
 				Optional:    true,
 			},
 			"secret_key": schema.StringAttribute{
-				Description: "Secret Key for AWS. May also be provided via CUSTOMS3_SECRET_KEY environment variable.",
+				Description: "Secret Key for AWS. May also be provided via S3_SECRET_KEY environment variable.",
 				Optional:    true,
 				Sensitive:   true,
 			},

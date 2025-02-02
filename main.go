@@ -7,7 +7,7 @@ import (
 	"flag"
 	"log"
 
-	"terraform-provider-customs3/internal/provider"
+	"terraform-provider-s3/internal/provider"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 )
@@ -23,7 +23,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "hashicorp.com/edu/customs3",
+		Address: "hashicorp.com/edu/s3",
 		Debug:   debug,
 	}
 

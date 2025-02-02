@@ -1,3 +1,3 @@
 # Copyright (c) HashiCorp, Inc.
 
-data "customs3_buckets" "all" {}
+data "s3_buckets" "all" {}

@@ -52,6 +52,7 @@ func (r *orderResource) Metadata(_ context.Context, req resource.MetadataRequest
 // Schema defines the schema for the resource.
 func (r *orderResource) Schema(_ context.Context, _ resource.SchemaRequest, resp *resource.SchemaResponse) {
 	resp.Schema = schema.Schema{
+		Description: "Manages an s3 bucket.",
 		Attributes: map[string]schema.Attribute{
 			"last_updated": schema.StringAttribute{
 				Description: "Date Updated",

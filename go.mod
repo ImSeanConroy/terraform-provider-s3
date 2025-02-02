@@ -1,4 +1,4 @@
-module terraform-provider-customs3
+module terraform-provider-s3
 
 go 1.22.0
 

@@ -48,6 +48,7 @@ func (d *bucketDataSource) Metadata(_ context.Context, req datasource.MetadataRe
 
 func (d *bucketDataSource) Schema(_ context.Context, _ datasource.SchemaRequest, resp *datasource.SchemaResponse) {
 	resp.Schema = schema.Schema{
+		Description: "Fetches the list of s3 bucket.",
 		Attributes: map[string]schema.Attribute{
 			"buckets": schema.ListNestedAttribute{
 				Computed: true,
